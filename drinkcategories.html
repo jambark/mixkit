@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width:device-width, initial-scale: 1.0">
+	<title>Mixkit - Recipe Directory</title>
+
+<style>
+body	{
+	background-color: black;
+	color: white;
+	margin: 0 px 0 px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+a	{
+	text-decoration: none;
+	color: black;
+	cursor: default;
+}
+.back	{
+	background-color: black;
+	margin-bottom: 0px;
+	border: inset;
+	border-width: 2px;
+	border-color: #b33;
+	color: #b33;
+	cursor: default;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 18px;
+	width: 144px;
+	height: 36px;
+	align-content: center;
+}
+.back:hover	{
+	border-color: #b3b;
+	color: #b3b;
+}
+.title	{
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: 30px;
+	margin-bottom: 18px;
+	border: inset;
+	border-width: 2px;
+	border-color: #bcc;
+	padding-top: 30px;
+	color: #bcc;
+	cursor: default;
+	font-family: georgia, serif;
+	text-align: center;
+	line-height: 0;
+	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	align-self: center;
+	height: 32px;
+	width: 87.5%;
+	max-width: 87.5%;
+}
+.ginlink:hover	{
+	color:#60c;
+}
+.gin	{
+	background-image: url("ginbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.ginx	{
+	background-image: url("ginbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.gin:hover	{
+	font-size: 37px;
+	color: #60c;
+}
+.vodkalink:hover	{
+	color:#666;
+}
+.vodka	{
+	background-image: url("vodkabanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.vodkax	{
+	background-image: url("vodkabanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.vodka:hover	{
+	font-size: 37px;
+}
+.whiskeylink:hover	{
+	color:#720;
+}
+.whiskey	{
+	background-image: url("whiskeybanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.whiskeyx	{
+	background-image: url("whiskeybanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.whiskey:hover	{
+	font-size: 37px;
+}
+.rumlink:hover	{
+	color:#770;
+}
+.rum	{
+	background-image: url("rumbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.rumx	{
+	background-image: url("rumbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.rum:hover	{
+	font-size: 37px;
+}
+.tequilalink:hover	{
+	color:#590;
+}
+.tequila	{
+	background-image: url("tequilabanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.tequilax	{
+	background-image: url("tequilabanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.tequila:hover	{
+	font-size: 37px;
+}
+.winelink:hover	{
+	color:#a05;
+}
+.wine	{
+	background-image: url("winebanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.winex	{
+	background-image: url("winebanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.wine:hover	{
+	font-size: 37px;
+}
+.liqueurlink:hover	{
+	color: #a00;
+}
+.liqueur	{
+	background-image: url("liqueurbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.liqueurx	{
+	background-image: url("liqueurbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.liqueur:hover	{
+	font-size: 37px;
+}
+.hybridlink:hover	{
+	color: #bbb;
+}
+.hybrid	{
+	background-image: url("hybridbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.hybridx	{
+	background-image: url("hybridbanner.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.hybrid:hover	{
+	font-size: 37px;
+}
+.left	{
+	width: 50%;
+	max-width: 50%;
+}
+.right	{
+	width: 50%;
+	max-width: 50%;
+}
+.columns	{
+	display: inline-flex;
+	flex-direction: row;
+}
+
+
+</style>
+
+<script>
+function pfGin() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getGin.classList.contains('gin'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfGin()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getGin.classList.contains('gin'))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getGin.classList.contains('gin'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfVodka() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getVodka.classList.contains('vodka'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfVodka()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getVodka.classList.contains('vodka'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getVodka.classList.contains('vodka'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfWhiskey() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfWhiskey()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getWhiskey.classList.contains('whiskey'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfRum() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getRum.classList.contains('rum'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfRum()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getRum.classList.contains('rum'))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getRum.classList.contains('rum'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfTequila() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getTequila.classList.contains('tequila'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfTequila()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getTequila.classList.contains('tequila'))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getTequila.classList.contains('tequila'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfWine() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getWine.classList.contains('wine'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfWine()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getWine.classList.contains('wine'))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getWine.classList.contains('wine'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfLiqueur() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+	if (getLiqueur.clasLiqueursList.contains('liqueur'))	{
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	} else {
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	}
+}
+
+function rpfLiqueur()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+	if (getLiqueur.classList.contains('liqueur'))	{
+		getHybrid.classList.remove('hybridx');
+		getHybrid.classList.add('hybrid');
+	} else {
+		getHybrid.classList.remove('hybrid');
+		getHybrid.classList.add('hybridx');
+	}
+}
+
+function pfHybrid() {
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getHybrid.classList.contains('hybrid'))	{
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	} else {
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	} else {
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	} else {
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	} else {
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	} else {
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	} else {
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	} else {
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	}
+}
+
+function rpfHybrid()	{
+	var getGin = document.getElementById('gin');
+	var getVodka = document.getElementById('vodka');
+	var getWhiskey = document.getElementById('whiskey');
+	var getRum = document.getElementById('rum');
+	var getTequila = document.getElementById('tequila');
+	var getWine = document.getElementById('wine');
+	var getLiqueur = document.getElementById('liqueur');
+	var getHybrid = document.getElementById('hybrid');
+	if (getHybrid.classList.contains(hybrid))	{
+		getVodka.classList.remove('vodkax');
+		getVodka.classList.add('vodka');
+	} else {
+		getVodka.classList.remove('vodka');
+		getVodka.classList.add('vodkax');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getWhiskey.classList.remove('whiskeyx');
+		getWhiskey.classList.add('whiskey');
+	} else {
+		getWhiskey.classList.remove('whiskey');
+		getWhiskey.classList.add('whiskeyx');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getRum.classList.remove('rumx');
+		getRum.classList.add('rum');
+	} else {
+		getRum.classList.remove('rum');
+		getRum.classList.add('rumx');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getTequila.classList.remove('tequilax');
+		getTequila.classList.add('tequila');
+	} else {
+		getTequila.classList.remove('tequila');
+		getTequila.classList.add('tequilax');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getWine.classList.remove('winex');
+		getWine.classList.add('wine');
+	} else {
+		getWine.classList.remove('wine');
+		getWine.classList.add('winex');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getLiqueur.classList.remove('liqueurx');
+		getLiqueur.classList.add('liqueur');
+	} else {
+		getLiqueur.classList.remove('liqueur');
+		getLiqueur.classList.add('liqueurx');
+	}
+	if (getHybrid.classList.contains('hybrid'))	{
+		getGin.classList.remove('ginx');
+		getGin.classList.add('gin');
+	} else {
+		getGin.classList.remove('gin');
+		getGin.classList.add('ginx');
+	}
+}
+</script>
+
+</head>
+
+<body>
+
+<a href="index.html" class="back">&lt; &lt; Return</a>
+
+<div class="title">Drink Directory</div>
+
+<div class="columns">
+
+<div class="left">
+<div class="gin" id="gin" onmouseover="pfGin()" onmouseout="rpfGin()"><a href="gindrinks.html" class="ginlink">Gin Drinks</a></div>
+<div class="vodka" id="vodka" onmouseover="pfVodka()" onmouseout="rpfVodka()"><a href="vodkadrinks.html" class="vodkalink">Vodka Drinks</a></div>
+<div class="whiskey" id="whiskey" onmouseover="pfWhiskey()" onmouseout="rpfWhiskey()"><a href="whiskeydrinks.html" class="whiskeylink">Whiskey Drinks</a></div>
+<div class="rum" id="rum" onmouseover="pfRum()" onmouseout="rpfRum()"><a href="rumdrinks.html" class="rumlink">Rum Drinks</a></div>
+</div>
+<div class="left">
+<div class="tequila" id="tequila" onmouseover="pfTequila()" onmouseout="rpfTequila()"><a href="tequiladrinks.html" class="tequilalink">Tequila and Mezcal Drinks</a></div>
+<div class="wine" id="wine" onmouseover="pfWine()" onmouseout="rpfWine()"><a href="winedrinks.html" class="winelink">Wine, Brandy, and Cognac Drinks</a></div>
+<div class="liqueur" id="liqueur" onmouseover="pfLiqueur()" onmouseout="rpfLiqueur()"><a href="liqueurdrinks.html" class="liqueurlink">Liqueur and Bitter Drinks</a></div>
+<div class="hybrid" id="hybrid" onmouseover="pfHybrid()" onmouseout="rpfHybrid()"><a href="hybriddrinks.html" class="hybridlink">Mixed and Hybrid Drinks</a></div>
+</div>
+
+</div>
+
+
+</body>
+</html>
