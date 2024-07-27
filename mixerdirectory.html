@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width:device-width, initial-scale: 1.0">
+	<title>Mixkit - Mixers</title>
+
+<style>
+body	{
+	background-color: black;
+	color: white;
+	margin: 0 px 0 px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+a	{
+	text-decoration: none;
+	color: black;
+	cursor: default;
+}
+.back	{
+	background-color: black;
+	margin-bottom: 0px;
+	border: inset;
+	border-width: 2px;
+	border-color: #b33;
+	color: #b33;
+	cursor: default;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 18px;
+	width: 144px;
+	height: 36px;
+	align-content: center;
+}
+.back:hover	{
+	border-color: #b3b;
+	color: #b3b;
+}
+.page	{
+	display: inline-flex;
+	align-self: center;
+	width: 96%;
+}
+.onecolumn	{
+	width: 16%;
+}
+.twocolumn	{
+	width: 16%;
+}
+.threecolumn	{
+	width: 16%;
+}
+.fourcolumn	{
+	width: 16%;
+}
+.fivecolumn	{
+	width: 16%;
+}
+.sixcolumn	{
+	width: 16%;
+}
+.agavesyrup, .aquafaba, .celerysalt, .chamomilecordial, 
+.cocktailfoamer, .coconutcream, .coffee, .cola, 
+.cranberryjuice, .cream, .donnsmix, .eggwhite, 
+.eggyolk, .elderflowercordial, .espresso, .gingerale, 
+.gingerbeer, .grapefruitjuice, .grenadinesyrup, .honey, 
+.honeymix, .honeysyrup, .lemonjuice, .limejuice, 
+.orangeflowerwater, .orangejuice, .orgeatsyrup, .peachpuree, 
+.pepper, .pineapplejuice, .pinkgrapefruitsoda, .raspberrysyrup, 
+.salt, .simplesyrup, .sodawater, .sugar, 
+.sugarcanejuice, .tabascosauce, .tomatojuice, .vanillaextract, 
+.water, .worcestershiresauce	{
+	background-color: #bcc;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: black;
+	cursor: default;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.agavesyrup:hover, .aquafaba:hover, .celerysalt:hover, .chamomilecordial:hover, 
+.cocktailfoamer:hover, .coconutcream:hover, .coffee:hover, .cola:hover, 
+.cranberryjuice:hover, .cream:hover, .donnsmix:hover, .eggwhite:hover, 
+.eggyolk:hover, .elderflowercordial:hover, .espresso:hover, .gingerale:hover, 
+.gingerbeer:hover, .grapefruitjuice:hover, .grenadinesyrup:hover, .honey:hover, 
+.honeymix:hover, .honeysyrup:hover, .lemonjuice:hover, .limejuice:hover, 
+.orangeflowerwater:hover, .orangejuice:hover, .orgeatsyrup:hover, .peachpuree:hover, 
+.pepper:hover, .pineapplejuice:hover, .pinkgrapefruitsoda:hover, .raspberrysyrup:hover, 
+.salt:hover, .simplesyrup:hover, .sodawater:hover, .sugar:hover, 
+.sugarcanejuice:hover, .tabascosauce:hover, .tomatojuice:hover, .vanillaextract:hover, 
+.water:hover, .worcestershiresauce:hover	{
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 17px 12.5%;
+	padding: 10px 0px;
+	color: #fff;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	width: 75%;
+	max-width: 75%;
+}
+.agavesyruplink:hover, .aquafabalink:hover, .celerysaltlink:hover, .chamomilecordiallink:hover, 
+.cocktailfoamerlink:hover, .coconutcreamlink:hover, .coffeelink:hover, .colalink:hover, 
+.cranberryjuicelink:hover, .creamlink:hover, .donnsmixlink:hover, .eggwhitelink:hover, 
+.eggyolklink:hover, .elderflowercordiallink:hover, .espressolink:hover, .gingeralelink:hover, 
+.gingerbeerlink:hover, .grapefruitjuicelink:hover, .grenadinesyruplink:hover, .honeylink:hover, 
+.honeymixlink:hover, .honeysyruplink:hover, .lemonjuicelink:hover, .limejuicelink:hover, 
+.orangeflowerwaterlink:hover, .orangejuicelink:hover, .orgeatsyruplink:hover, .peachpureelink:hover, 
+.pepperlink:hover, .pineapplejuicelink:hover, .pinkgrapefruitsodalink:hover, .raspberrysyruplink:hover, 
+.saltlink:hover, .simplesyruplink:hover, .sodawaterlink:hover, .sugarlink:hover, 
+.sugarcanejuicelink:hover, .tabascosaucelink:hover, .tomatojuicelink:hover, .vanillaextractlink:hover, 
+.waterlink:hover, .worcestershiresaucelink:hover	{
+	color: #fff;
+}
+.header	{
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: 30px;
+	margin-bottom: 18px;
+	border: inset;
+	border-width: 2px;
+	border-color: #bcc;
+	padding-top: 30px;
+	color: #bcc;
+	cursor: default;
+	font-family: georgia, serif;
+	text-align: center;
+	line-height: 0;
+	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-content: stretch;
+	align-self: center;
+	height: 32px;
+	width: 96%;
+	max-width: 96%;
+}
+.doc	{
+	display: flex;
+	flex-direction: column;
+}
+</style>
+
+<script>
+</script>
+
+</head>
+<body>
+
+<div class="doc">
+
+<a href="ingredientdirectory.html" class="back">&lt; &lt; Return</a>
+
+<div class="header">
+Mixers
+</div>
+
+<div class=page>
+
+<div class=onecolumn>
+	<div class="agavesyrup"><a href="agavesyrup.html" class="agavesyruplink">Agave Syrup</a></div>
+	<div class="aquafaba"><a href="aquafaba.html" class="aquafabalink">Aquafaba</a></div>
+	<div class="celerysalt"><a href="celerysalt.html" class="celerysaltlink">Celery Salt</a></div>
+	<div class="chamomilecordial"><a href="chamomilecordial.html" class="chamomilecordiallink">Chamomile Cordial</a></div>
+	<div class="cocktailfoamer"><a href="cocktailfoamer.html" class="cocktailfoamerlink">Cocktail Foamer</a></div>
+	<div class="coconutcream"><a href="coconutcream.html" class="coconutcreamlink">Coconut Cream</a></div>
+	<div class="coffee"><a href="coffee.html" class="coffeelink">Coffee</a></div>
+</div>
+<div class=twocolumn>
+	<div class="cola"><a href="cola.html" class="colalink">Cola</a></div>
+	<div class="cranberryjuice"><a href="cranberryjuice.html" class="cranberryjuicelink">Cranberry Juice</a></div>
+	<div class="cream"><a href="cream.html" class="creamlink">Cream</a></div>
+	<div class="donnsmix"><a href="donnsmix.html" class="donnsmixlink">Donn's Mix</a></div>
+	<div class="eggwhite"><a href="eggwhite.html" class="eggwhitelink">Egg White</a></div>
+	<div class="eggyolk"><a href="eggyolk.html" class="eggyolklink">Egg Yolk</a></div>
+	<div class="elderflowercordial"><a href="elderflowercordial.html" class="elderflowercordiallink">Elderflower Cordial</a></div>
+</div>
+<div class=threecolumn>
+	<div class="espresso"><a href="espresso.html" class="espressolink">Espresso</a></div>
+	<div class="gingerale"><a href="gingerale.html" class="gingeralelink">Ginger Ale</a></div>
+	<div class="gingerbeer"><a href="gingerbeer.html" class="gingerbeerlink">Ginger Beer</a></div>
+	<div class="grapefruitjuice"><a href="grapefruitjuice.html" class="grapefruitjuicelink">Grapefruit Juice</a></div>
+	<div class="grenadinesyrup"><a href="grenadinesyrup.html" class="grenadinesyruplink">Grenadine Syrup</a></div>
+	<div class="honey"><a href="honey.html" class="honeylink">Honey</a></div>
+	<div class="honeymix"><a href="honeymix.html" class="honeymixlink">Honey Mix</a></div>
+</div>
+<div class=fourcolumn>
+	<div class="honeysyrup"><a href="honeysyrup.html" class="honeysyruplink">Honey Syrup</a></div>
+	<div class="lemonjuice"><a href="lemonjuice.html" class="lemonjuicelink">Lemon Juice</a></div>
+	<div class="limejuice"><a href="limejuice.html" class="limejuicelink">Lime Juice</a></div>
+	<div class="orangeflowerwater"><a href="orangeflowerwater.html" class="orangeflowerwaterlink">Orange Flower Water</a></div>
+	<div class="orangejuice"><a href="orangejuice.html" class="orangejuicelink">Orange Juice</a></div>
+	<div class="orgeatsyrup"><a href="orgeatsyrup.html" class="orgeatsyruplink">Orgeat Syrup</a></div>
+	<div class="peachpuree"><a href="peachpuree.html" class="peachpureelink">Peach Purée</a></div>
+</div>
+<div class=fivecolumn>
+	<div class="pepper"><a href="pepper.html" class="pepperlink">Pepper</a></div>
+	<div class="pineapplejuice"><a href="pineapplejuice.html" class="pineapplejuicelink">Pineapple Juice</a></div>
+	<div class="pinkgrapefruitsoda"><a href="pinkgrapefruitsoda.html" class="pinkgrapefruitsodalink">Pink Grapefruit Soda</a></div>
+	<div class="raspberrysyrup"><a href="raspberrysyrup.html" class="raspberrysyruplink">Raspberry Syrup</a></div>
+	<div class="salt"><a href="salt.html" class="saltlink">Salt</a></div>
+	<div class="simplesyrup"><a href="simplesyrup.html" class="simplesyruplink">Simple Syrup</a></div>
+	<div class="sodawater"><a href="sodawater.html" class="sodawaterlink">Soda Water</a></div>
+</div>
+<div class=sixcolumn>
+	<div class="sugar"><a href="sugar.html" class="sugarlink">Sugar</a></div>
+	<div class="sugarcanejuice"><a href="sugarcanejuice.html" class="sugarcanejuicelink">Sugar Cane Juice</a></div>
+	<div class="tabascosauce"><a href="tabascosauce.html" class="tabascosaucelink">Tabasco Sauce</a></div>
+	<div class="tomatojuice"><a href="tomatojuice.html" class="tomatojuicelink">Tomato Juice</a></div>
+	<div class="vanillaextract"><a href="vanillaextract.html" class="vanillaextractlink">Vanilla Extract</a></div>
+	<div class="water"><a href="water.html" class="waterlink">Water</a></div>
+	<div class="worcestershiresauce"><a href="worcestershiresauce.html" class="worcestershiresaucelink">Worcestershire Sauce</a></div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
